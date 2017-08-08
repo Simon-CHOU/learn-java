@@ -27,7 +27,7 @@ class Derived extends p1.Original{
 
 class AnotherPackageClass{
     void Access(){
-        p1.Original = new Original();
+        p1.Original o = new p1.Original();
         System.out.println("****  另一包中的其他类 ****");
          // System.out.println("friendly member"+o.n_friendly);
         //不能访问
