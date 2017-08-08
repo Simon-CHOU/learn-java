@@ -1,28 +1,25 @@
 package p2;
 
-import p1.Original;
-
 class Derived extends p1.Original{
-    @Override
     void Access(){
         
-        System.out.println("**** 涓嶅悓鍖呯殑瀛愮被 ****");
+        System.out.println("**** 不同包的子类 ****");
         //System.out.println("friendly member"+n_friendly);
-        //涓嶈兘璁块棶
+        //不能访问
         //System.out.println("private member "+n_private);
-        //涓嶈兘璁块棶
+        //不能访问
         System.out.println("protected member"+n_protected);
-        //瀛愮被鍙互璁块棶鐖剁被
+        //子类可以访问父类
         System.out.println("public member "+n_public);
 
         p1.Original o = new p1.Original();
-        System.out.println("**** 璁块棶鍦ㄤ笉鍚屽寘涓殑鐖剁被 ****");
+        System.out.println("**** 访问在不同包中的父类 ****");
         // System.out.println("friendly member"+o.n_friendly);
-        //涓嶈兘璁块棶
+        //不能访问
         //System.out.println("private member "+o.n_private);
-        //涓嶈兘璁块棶
+        //不能访问
         //System.out.println("protected member"+o.n_protected);
-        //涓嶈兘璁块棶
+        //不能访问
         System.out.println("public member "+o.n_public);
     
     }
@@ -31,13 +28,13 @@ class Derived extends p1.Original{
 class AnotherPackageClass{
     void Access(){
         p1.Original = new Original();
-        System.out.println("****  鍙︿竴鍖呬腑鐨勫叾浠栫被 ****");
+        System.out.println("****  另一包中的其他类 ****");
          // System.out.println("friendly member"+o.n_friendly);
-        //涓嶈兘璁块棶
+        //不能访问
         //System.out.println("private member "+o.n_private);
-        //涓嶈兘璁块棶
+        //不能访问
         //System.out.println("protected member"+o.n_protected);
-        //涓嶈兘璁块棶
+        //不能访问
         System.out.println("public member "+o.n_public);
     }
 }
